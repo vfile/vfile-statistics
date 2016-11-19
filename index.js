@@ -1,17 +1,8 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module vfile-statistics
- * @fileoverview Count vfile messages per category.
- */
-
 'use strict';
 
-/* Expose. */
 module.exports = statistics;
 
-/** Get stats for a file, list of files, or list of messages. */
+/* Get stats for a file, list of files, or list of messages. */
 function statistics(files) {
   var total = 0;
   var result = {true: 0, false: 0};

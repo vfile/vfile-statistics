@@ -1,19 +1,9 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module
- * @fileoverview Test suite for `vfile-statistics`.
- */
-
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var vfile = require('vfile');
 var statistics = require('./');
 
-/* Tests. */
 test('statistics()', function (t) {
   var file = vfile();
   var other = vfile();
