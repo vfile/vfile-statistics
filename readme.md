@@ -47,13 +47,13 @@ Pass a [vfile][], list of vfiles, or a list of messages
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/vfile-statistics.svg
+[travis-badge]: https://img.shields.io/travis/vfile/vfile-statistics.svg
 
-[travis]: https://travis-ci.org/wooorm/vfile-statistics
+[travis]: https://travis-ci.org/vfile/vfile-statistics
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/vfile-statistics.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/vfile/vfile-statistics.svg
 
-[codecov]: https://codecov.io/github/wooorm/vfile-statistics
+[codecov]: https://codecov.io/github/vfile/vfile-statistics
 
 [npm-install]: https://docs.npmjs.com/cli/install
 
@@ -61,4 +61,4 @@ Pass a [vfile][], list of vfiles, or a list of messages
 
 [author]: http://wooorm.com
 
-[vfile]: https://github.com/wooorm/vfile
+[vfile]: https://github.com/vfile/vfile
