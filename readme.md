@@ -1,6 +1,6 @@
 # vfile-statistics [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-Count [vfile][] messages per category (fatal, nonfatal, and total).
+Count [vfile][] messages per category (fatal, warn, info, nonfatal and total).
 
 ## Installation
 
@@ -13,8 +13,8 @@ npm install vfile-statistics
 ## Usage
 
 ```js
-var statistics = require('vfile-statistics');
 var vfile = require('vfile');
+var statistics = require('vfile-statistics');
 
 var file = vfile({path: '~/example.md'});
 
@@ -25,13 +25,15 @@ try {
   file.fail('This is terribly wrong');
 } catch (err) {}
 
+file.info('This is perfect');
+
 console.log(statistics(file));
 ```
 
 Yields:
 
 ```js
-{ fatal: 1, nonfatal: 2, total: 3 }
+{ fatal: 1, nonfatal: 3, warn: 2, info: 1, total: 4 }
 ```
 
 ## API

@@ -17,7 +17,8 @@
   "bugs": "https://github.com/vfile/vfile-statistics/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+    "Brendan Abbott <brendan.abbott@temando.com>"
   ],
   "devDependencies": {
     "browserify": "^14.1.0",

@@ -4,16 +4,22 @@ module.exports = statistics;
 
 /* Get stats for a file, list of files, or list of messages. */
 function statistics(files) {
-  var total = 0;
-  var result = {true: 0, false: 0};
+  var result = {true: 0, false: 0, null: 0};
 
   count(files);
 
-  return {fatal: result.true, nonfatal: result.false, total: total};
+  return {
+    fatal: result.true,
+    nonfatal: result.false + result.null,
+    warn: result.false,
+    info: result.null,
+    total: result.true + result.false + result.null
+  };
 
   function count(value) {
     var index;
     var length;
+    var fatality;
 
     if (!value) {
       return;
@@ -33,8 +39,8 @@ function statistics(files) {
       length = value.length;
 
       while (++index < length) {
-        result[Boolean(value[index].fatal)]++;
-        total++;
+        fatality = value[index].fatal;
+        result[fatality === null || fatality === undefined ? null : Boolean(fatality)]++;
       }
     }
   }
