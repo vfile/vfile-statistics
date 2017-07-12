@@ -1,6 +1,6 @@
 # vfile-statistics [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-Count [vfile][] messages per category (fatal, nonfatal, and total).
+Count [vfile][] messages per category (fatal, nonfatal, info and total).
 
 ## Installation
 
@@ -31,7 +31,7 @@ console.log(statistics(file));
 Yields:
 
 ```js
-{ fatal: 1, nonfatal: 2, total: 3 }
+{ fatal: 1, nonfatal: 2, info: 0, total: 3 }
 ```
 
 ## API
