@@ -25,13 +25,15 @@ try {
   file.fail('This is terribly wrong');
 } catch (err) {}
 
+var msg = file.message('That could be better');
+msg.fatal = null;
 console.log(statistics(file));
 ```
 
 Yields:
 
 ```js
-{ fatal: 1, nonfatal: 2, warn: 0, info: 0, total: 3 }
+{ fatal: 1, nonfatal: 3, warn: 2, info: 1, total: 4 }
 ```
 
 ## API
