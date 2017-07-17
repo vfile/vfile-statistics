@@ -17,31 +17,34 @@ function statistics(files) {
   };
 
   function count(value) {
-    var index;
-    var length;
-    var fatality;
-
-    if (!value) {
-      return;
+    if (value) {
+      /* Multiple vfiles */
+      if (value[0] && value[0].messages) {
+        countInAll(value);
+      /* One vfile / messages */
+      } else {
+        countAll(value.messages || value);
+      }
     }
+  }
 
-    if (value.messages) {
-      count(value.messages);
-    } else if (value[0] && value[0].messages) {
-      index = -1;
-      length = value.length;
+  function countInAll(files) {
+    var length = files.length;
+    var index = -1;
 
-      while (++index < length) {
-        count(value[index].messages);
-      }
-    } else {
-      index = -1;
-      length = value.length;
+    while (++index < length) {
+      count(files[index].messages);
+    }
+  }
 
-      while (++index < length) {
-        fatality = value[index].fatal;
-        result[fatality === null || fatality === undefined ? null : Boolean(fatality)]++;
-      }
+  function countAll(messages) {
+    var length = messages.length;
+    var index = -1;
+    var fatal;
+
+    while (++index < length) {
+      fatal = messages[index].fatal;
+      result[fatal === null || fatal === undefined ? null : Boolean(fatal)]++;
     }
   }
 }
