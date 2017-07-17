@@ -4,7 +4,7 @@ Count [vfile][] messages per category (fatal, warn, info, nonfatal and total).
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install vfile-statistics
@@ -43,6 +43,16 @@ Yields:
 Pass a [vfile][], list of vfiles, or a list of messages
 (`file.messages`), get counts per category.
 
+###### Returns
+
+`Object`:
+
+*   `fatal`: fatal errors (`fatal: true`)
+*   `warn`: warning messages (`fatal: false`)
+*   `info`: informational messages (`fatal: null` or `fatal: undefined`)
+*   `nonfatal`: warning or info messages
+*   `total`: all messages
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -57,7 +67,7 @@ Pass a [vfile][], list of vfiles, or a list of messages
 
 [codecov]: https://codecov.io/github/vfile/vfile-statistics
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
