@@ -4,21 +4,13 @@ node_js:
 - '9.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
-  - provider: npm
-    skip_cleanup: true
-    email: tituswormer@gmail.com
-    api_key:
-      secure: Q875c21jzoyGwknBdAbE+U3GrQSDAqVnDaX9aZkpN6a8nxTiH9xkOrUYtxl7n1B+vv9NM8kKENPo66ZqInPFki17JQ1vH5/rSR276UjJfiWyEDnBlrgHwB45pzJRkCiYWe/mDi91p6uu/DmiXmiOgcbn1CWtM1hCIaxr/anDtVe6uk5RGoRvoq+m79GG69SaQ+ts7yUG1ohfN7OBFurAnZUtpW5BAD1ZDsfVmNgZWUpwDyzw14R8EtGspf5cMOHHk3TBaQ5kDe5GHkX7y1QWXqt2kZPeUSyalEdAqF32iB6+b8L4AtlLTxWq6OInwmSunSsgzGa9mBYcAaZUdMax1b5t28koUXnardUYBvPl+aIIcfCz0WV0d+cfwYxK/f9h3FLhBi/xmgzYWAyiImm/D3T2lP3skug3SoDpholNcPPnT2B1X12r3mGoM2wzYF08TjM2aCevB59gCs+bEr984XBhOm07gWPCp8pGEyzz83c7TxF9qNuhfZs5iyS2vY/aYrlgAQzk3C1OCVJapLmkJX0muk42o8DyPa4zQMsv3t5RhhKGAvfc09CH8uioIMc1YuxmK1vCbWzgTYTG6YgjDU+5J32I3bVb9ecCp9hb/OL2sOb9MEpfxLsT7gDp6gIuy0JAVrRwYsDr+z8nmK5lVmy7BFFDjYET/3gQ/oPpeCg=
-    on:
-      tags: true
-      node: '4.0'
-  - provider: releases
-    skip_cleanup: true
-    api_key:
-      secure: KDc98DmV42tI+6yKbD1kpxKQip3Pt36ea052fwNsVto7I2PtklK0BQc+qqs3LKnA9JEl7V+8OORGlbzs4427Hnyn0s+G/bIFOWAGX3M5O2ZooPYhw385G300Rv8H4FfT8rPm5JP6fplTLcfkEyouVj+swLU6qsBNLOnlED8Gz311NMPPIOzOxgQ3BLPa2opBVeU2ovpRuxNdGWgc5APshZCEycxWaHAAfwGxIQrl0muPbRaghw5lxhyB5grf98xc3uHUST4s3n+VnzIWTLAwC3k4xQwJ1Xyr6m9UqMJzrdYGGS6oZ9nSFEk74qM1EpdOdZSgSZJ36g92EwaovtFkQwkf4HYnn/WrukBP5v6htBl1+kI2wxsYKVYro2b+WA5HzgYn1utQZklBhUGtnNe9X2PJzXNbQRm9f2K25S2A0fvouEyFhTh7/4ebenvHavhJ3ioxfIqdzzAQXStPzXJqotAbNXbfivpVrwS8eD53XMXddOEcRBpHlIanooQeU9nv7awI+xuWs1tqF5ZZuUn9UOJmQmclPo0n9LXMouLEG1hUlowJ0YlOvTqkZaJkDR1jCtheN6EoEocOaKaoxx9SXcoLhmxDF55kuSz8wOhjQ9Ks0lt4f1zXSUZmttwyNK1ATM2/w0X+ZEO7TLS9wZ9dBhN8+7aZLvmImyCupjs8jsA=
-    file:
-      - "vfile-statistics.js"
-      - "vfile-statistics.min.js"
-    on:
-      tags: true
-      node: '9.0'
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: KDc98DmV42tI+6yKbD1kpxKQip3Pt36ea052fwNsVto7I2PtklK0BQc+qqs3LKnA9JEl7V+8OORGlbzs4427Hnyn0s+G/bIFOWAGX3M5O2ZooPYhw385G300Rv8H4FfT8rPm5JP6fplTLcfkEyouVj+swLU6qsBNLOnlED8Gz311NMPPIOzOxgQ3BLPa2opBVeU2ovpRuxNdGWgc5APshZCEycxWaHAAfwGxIQrl0muPbRaghw5lxhyB5grf98xc3uHUST4s3n+VnzIWTLAwC3k4xQwJ1Xyr6m9UqMJzrdYGGS6oZ9nSFEk74qM1EpdOdZSgSZJ36g92EwaovtFkQwkf4HYnn/WrukBP5v6htBl1+kI2wxsYKVYro2b+WA5HzgYn1utQZklBhUGtnNe9X2PJzXNbQRm9f2K25S2A0fvouEyFhTh7/4ebenvHavhJ3ioxfIqdzzAQXStPzXJqotAbNXbfivpVrwS8eD53XMXddOEcRBpHlIanooQeU9nv7awI+xuWs1tqF5ZZuUn9UOJmQmclPo0n9LXMouLEG1hUlowJ0YlOvTqkZaJkDR1jCtheN6EoEocOaKaoxx9SXcoLhmxDF55kuSz8wOhjQ9Ks0lt4f1zXSUZmttwyNK1ATM2/w0X+ZEO7TLS9wZ9dBhN8+7aZLvmImyCupjs8jsA=
+  file:
+    - "vfile-statistics.js"
+    - "vfile-statistics.min.js"
+  on:
+    tags: true
+    node: '9.0'
