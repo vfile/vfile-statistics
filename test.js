@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var vfile = require('vfile');
-var statistics = require('./');
+var statistics = require('.');
 
 test('statistics()', function (t) {
   var file = vfile();
