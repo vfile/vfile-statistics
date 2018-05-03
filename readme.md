@@ -13,21 +13,21 @@ npm install vfile-statistics
 ## Usage
 
 ```js
-var vfile = require('vfile');
-var statistics = require('vfile-statistics');
+var vfile = require('vfile')
+var statistics = require('vfile-statistics')
 
-var file = vfile({path: '~/example.md'});
+var file = vfile({path: '~/example.md'})
 
-file.message('This could be better');
-file.message('That could be better');
+file.message('This could be better')
+file.message('That could be better')
 
 try {
-  file.fail('This is terribly wrong');
+  file.fail('This is terribly wrong')
 } catch (err) {}
 
-file.info('This is perfect');
+file.info('This is perfect')
 
-console.log(statistics(file));
+console.log(statistics(file))
 ```
 
 Yields:
