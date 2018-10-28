@@ -68,7 +68,7 @@ test('statistics()', function(t) {
 
   try {
     file.fail('Again')
-  } catch (err) {}
+  } catch (error) {}
 
   t.deepEqual(statistics(file), {
     fatal: 1,
