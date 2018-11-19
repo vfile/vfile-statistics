@@ -1,6 +1,6 @@
 {
   "name": "vfile-statistics",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Count vfile messages per category",
   "license": "MIT",
   "keywords": [
