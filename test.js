@@ -9,6 +9,7 @@ test('statistics()', function(t) {
   var other = vfile()
 
   t.deepEqual(statistics(), {fatal: 0, nonfatal: 0, warn: 0, info: 0, total: 0})
+
   t.deepEqual(statistics(file), {
     fatal: 0,
     nonfatal: 0,
@@ -16,6 +17,7 @@ test('statistics()', function(t) {
     info: 0,
     total: 0
   })
+
   t.deepEqual(statistics([file, other]), {
     fatal: 0,
     nonfatal: 0,
@@ -25,6 +27,7 @@ test('statistics()', function(t) {
   })
 
   file.message('This')
+
   t.deepEqual(statistics(file.messages), {
     fatal: 0,
     nonfatal: 1,
@@ -32,6 +35,7 @@ test('statistics()', function(t) {
     info: 0,
     total: 1
   })
+
   t.deepEqual(statistics(file), {
     fatal: 0,
     nonfatal: 1,
@@ -39,6 +43,7 @@ test('statistics()', function(t) {
     info: 0,
     total: 1
   })
+
   t.deepEqual(statistics([file, other]), {
     fatal: 0,
     nonfatal: 1,
@@ -48,6 +53,7 @@ test('statistics()', function(t) {
   })
 
   file.message('That')
+
   t.deepEqual(statistics(file), {
     fatal: 0,
     nonfatal: 2,
@@ -56,8 +62,8 @@ test('statistics()', function(t) {
     total: 2
   })
 
-  var message = file.message('Info')
-  message.fatal = null
+  file.info('Info')
+
   t.deepEqual(statistics(file), {
     fatal: 0,
     nonfatal: 3,
