@@ -1,3 +1,5 @@
 coverage/
 vfile-statistics.js
 vfile-statistics.min.js
+*.json
+*.md
