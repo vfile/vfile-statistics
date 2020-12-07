@@ -3,10 +3,18 @@
 module.exports = statistics
 
 // Get stats for a file, list of files, or list of messages.
-function statistics(files) {
+function statistics(value) {
   var result = {true: 0, false: 0, null: 0}
 
-  count(files)
+  if (value) {
+    if (value[0] && value[0].messages) {
+      // Multiple vfiles.
+      countInAll(value)
+    } else {
+      // One vfile / messages.
+      countAll(value.messages || value)
+    }
+  }
 
   return {
     fatal: result.true,
@@ -16,35 +24,21 @@ function statistics(files) {
     total: result.true + result.false + result.null
   }
 
-  function count(value) {
-    if (value) {
-      if (value[0] && value[0].messages) {
-        // Multiple vfiles
-        countInAll(value)
-      } else {
-        // One vfile / messages
-        countAll(value.messages || value)
-      }
-    }
-  }
-
   function countInAll(files) {
-    var length = files.length
     var index = -1
 
-    while (++index < length) {
-      count(files[index].messages)
+    while (++index < files.length) {
+      countAll(files[index].messages)
     }
   }
 
   function countAll(messages) {
-    var length = messages.length
     var index = -1
-    var fatal
 
-    while (++index < length) {
-      fatal = messages[index].fatal
-      result[fatal === null || fatal === undefined ? null : Boolean(fatal)]++
+    while (++index < messages.length) {
+      result[
+        messages[index].fatal == null ? null : Boolean(messages[index].fatal)
+      ]++
     }
   }
 }

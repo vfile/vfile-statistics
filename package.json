@@ -67,6 +67,8 @@
     "prettier": true,
     "esnext": false,
     "rules": {
+      "eqeqeq": "off",
+      "no-eq-null": "off",
       "unicorn/prefer-optional-catch-binding": "off"
     },
     "ignores": [
