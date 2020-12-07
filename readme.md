@@ -77,9 +77,9 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/vfile/vfile-statistics.svg
+[build-badge]: https://github.com/vfile/vfile-statistics/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/vfile/vfile-statistics
+[build]: https://github.com/vfile/vfile-statistics/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/vfile/vfile-statistics.svg
 
