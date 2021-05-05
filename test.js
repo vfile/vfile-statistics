@@ -1,12 +1,10 @@
-'use strict'
-
-var test = require('tape')
-var vfile = require('vfile')
-var statistics = require('.')
+import test from 'tape'
+import {VFile} from 'vfile'
+import {statistics} from './index.js'
 
 test('statistics()', function (t) {
-  var file = vfile()
-  var other = vfile()
+  var file = new VFile()
+  var other = new VFile()
 
   t.deepEqual(statistics(), {fatal: 0, nonfatal: 0, warn: 0, info: 0, total: 0})
 
@@ -74,7 +72,7 @@ test('statistics()', function (t) {
 
   try {
     file.fail('Again')
-  } catch (_) {}
+  } catch {}
 
   t.deepEqual(statistics(file), {
     fatal: 1,

@@ -1,9 +1,5 @@
-'use strict'
-
-module.exports = statistics
-
 // Get stats for a file, list of files, or list of messages.
-function statistics(value) {
+export function statistics(value) {
   var result = {true: 0, false: 0, null: 0}
 
   if (value) {
@@ -37,7 +33,9 @@ function statistics(value) {
 
     while (++index < messages.length) {
       result[
-        messages[index].fatal == null ? null : Boolean(messages[index].fatal)
+        messages[index].fatal === undefined || messages[index].fatal === null
+          ? null
+          : Boolean(messages[index].fatal)
       ]++
     }
   }

@@ -1,8 +1,5 @@
 .DS_Store
 *.log
-.nyc_output/
 coverage/
 node_modules/
-vfile-statistics.js
-vfile-statistics.min.js
 yarn.lock

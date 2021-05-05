@@ -12,6 +12,9 @@ Count [vfile][] messages per category (fatal, warn, info, nonfatal and total).
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -21,10 +24,10 @@ npm install vfile-statistics
 ## Use
 
 ```js
-var vfile = require('vfile')
-var statistics = require('vfile-statistics')
+import {VFile} from 'vfile'
+import {statistics} from 'vfile-statistics'
 
-var file = vfile({path: '~/example.md'})
+var file = new VFile({path: '~/example.md'})
 
 file.message('This could be better')
 file.message('That could be better')
@@ -45,6 +48,9 @@ Yields:
 ```
 
 ## API
+
+This package exports the following identifiers: `statistics`.
+There is no default export.
 
 ### `statistics(file)`
 
