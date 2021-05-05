@@ -13,7 +13,7 @@
 /**
  * Get stats for a file, list of files, or list of messages.
  *
- * @param {Array.<VFile|VFileMessage>|VFile|VFileMessage} value
+ * @param {Array.<VFile|VFileMessage>|VFile|VFileMessage} [value]
  * @returns {Statistics}
  */
 export function statistics(value) {
