@@ -8,17 +8,51 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Count [vfile][] messages per category (fatal, warn, info, nonfatal and total).
+[vfile][] utility to count messages per category (fatal, warn, info, etc).
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`statistics(file)`](#statisticsfile)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This tiny package gives you stats about messages in files.
+
+## When should I use this?
+
+This is really tiny, you could do it yourself, but this is useful as a building
+block.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install vfile-statistics
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {statistics} from 'https://esm.sh/vfile-statistics@2'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {statistics} from 'https://esm.sh/vfile-statistics@2?bundle'
+</script>
 ```
 
 ## Use
@@ -27,14 +61,14 @@ npm install vfile-statistics
 import {VFile} from 'vfile'
 import {statistics} from 'vfile-statistics'
 
-var file = new VFile({path: '~/example.md'})
+const file = new VFile({path: '~/example.md'})
 
 file.message('This could be better')
 file.message('That could be better')
 
 try {
   file.fail('This is terribly wrong')
-} catch (err) {}
+} catch {}
 
 file.info('This is perfect')
 
@@ -49,7 +83,7 @@ Yields:
 
 ## API
 
-This package exports the following identifiers: `statistics`.
+This package exports the identifier `statistics`.
 There is no default export.
 
 ### `statistics(file)`
@@ -59,13 +93,25 @@ counts per category.
 
 ###### Returns
 
-`Object`:
+An object with the following fields set to numbers:
 
-*   `fatal`: fatal errors (`fatal: true`)
-*   `warn`: warning messages (`fatal: false`)
-*   `info`: informational messages (`fatal: null` or `fatal: undefined`)
-*   `nonfatal`: warning or info messages
-*   `total`: all messages
+*   `fatal` — fatal errors (`fatal: true`)
+*   `warn` — warning messages (`fatal: false`)
+*   `info` — informational messages (`fatal: null` or `fatal: undefined`)
+*   `nonfatal` — warning or info messages
+*   `total` — all messages
+
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports the additional type `Statistics`.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Contribute
 
@@ -111,13 +157,19 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[contributing]: https://github.com/vfile/.github/blob/HEAD/contributing.md
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 
-[support]: https://github.com/vfile/.github/blob/HEAD/support.md
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
+[contributing]: https://github.com/vfile/.github/blob/main/contributing.md
+
+[support]: https://github.com/vfile/.github/blob/main/support.md
 
 [health]: https://github.com/vfile/.github
 
-[coc]: https://github.com/vfile/.github/blob/HEAD/code-of-conduct.md
+[coc]: https://github.com/vfile/.github/blob/main/code-of-conduct.md
 
 [license]: license
 
