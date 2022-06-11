@@ -3,21 +3,27 @@
  * @typedef {import('vfile-message').VFileMessage} VFileMessage
  *
  * @typedef Statistics
- * @property {number} fatal Fatal errors (`fatal: true`)
- * @property {number} warn warning errors (`fatal: false`)
- * @property {number} info informational messages (`fatal: null|undefined`)
- * @property {number} nonfatal warning + info
- * @property {number} total nonfatal + fatal
+ *   Statistics.
+ * @property {number} fatal
+ *   Fatal errors (`fatal: true`)
+ * @property {number} warn
+ *   Warnings (`fatal: false`)
+ * @property {number} info
+ *   Informational messages (`fatal: null|undefined`)
+ * @property {number} nonfatal
+ *   Warning + info
+ * @property {number} total
+ *   Nonfatal + fatal
  */
 
 /**
  * Get stats for a file, list of files, or list of messages.
  *
- * @param {Array.<VFile|VFileMessage>|VFile|VFileMessage} [value]
+ * @param {Array<VFile|VFileMessage>|VFile|VFileMessage} [value]
  * @returns {Statistics}
  */
 export function statistics(value) {
-  var result = {true: 0, false: 0, null: 0}
+  const result = {true: 0, false: 0, null: 0}
 
   if (value) {
     if (Array.isArray(value)) {
@@ -36,11 +42,11 @@ export function statistics(value) {
   }
 
   /**
-   * @param {Array.<VFile|VFileMessage>} value
+   * @param {Array<VFile|VFileMessage>} value
    * @returns {void}
    */
   function list(value) {
-    var index = -1
+    let index = -1
 
     while (++index < value.length) {
       one(value[index])

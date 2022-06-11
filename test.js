@@ -3,8 +3,8 @@ import {VFile} from 'vfile'
 import {statistics} from './index.js'
 
 test('statistics()', function (t) {
-  var file = new VFile()
-  var other = new VFile()
+  const file = new VFile()
+  const other = new VFile()
 
   t.deepEqual(statistics(), {fatal: 0, nonfatal: 0, warn: 0, info: 0, total: 0})
 
