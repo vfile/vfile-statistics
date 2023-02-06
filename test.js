@@ -2,8 +2,15 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {VFile} from 'vfile'
 import {statistics} from './index.js'
+import * as mod from './index.js'
 
 test('statistics', function () {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['statistics'],
+    'should expose the public api'
+  )
+
   const file = new VFile()
   const other = new VFile()
 
