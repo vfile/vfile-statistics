@@ -14,6 +14,9 @@
  *   Warning + info
  * @property {number} total
  *   Nonfatal + fatal
+ *
+ * @typedef {'true' | 'false' | 'null'} Field
+ * @typedef {Record<Field, number>} Fields
  */
 
 /**
@@ -23,6 +26,7 @@
  * @returns {Statistics}
  */
 export function statistics(value) {
+  /** @type {Fields} */
   const result = {true: 0, false: 0, null: 0}
 
   if (value) {
@@ -60,10 +64,14 @@ export function statistics(value) {
   function one(value) {
     if ('messages' in value) return list(value.messages)
 
-    result[
-      value.fatal === undefined || value.fatal === null
-        ? null
-        : Boolean(value.fatal)
-    ]++
+    const field = /** @type {Field} */ (
+      String(
+        value.fatal === undefined || value.fatal === null
+          ? null
+          : Boolean(value.fatal)
+      )
+    )
+
+    result[field]++
   }
 }
