@@ -1,32 +1,34 @@
 /**
  * @typedef {import('vfile').VFile} VFile
  * @typedef {import('vfile-message').VFileMessage} VFileMessage
- *
+ */
+
+/**
  * @typedef Statistics
  *   Statistics.
  * @property {number} fatal
- *   Fatal errors (`fatal: true`)
+ *   Fatal errors (`fatal: true`).
  * @property {number} warn
- *   Warnings (`fatal: false`)
+ *   Warnings (`fatal: false`).
  * @property {number} info
- *   Informational messages (`fatal: null|undefined`)
+ *   Informational messages (`fatal: null | undefined`).
  * @property {number} nonfatal
- *   Warning + info
+ *   Warning + info.
  * @property {number} total
- *   Nonfatal + fatal
+ *   Nonfatal + fatal.
  *
  * @typedef {'true' | 'false' | 'null'} Field
- * @typedef {Record<Field, number>} Fields
+ *   Fatal field.
  */
 
 /**
  * Get stats for a file, list of files, or list of messages.
  *
- * @param {Array<VFile|VFileMessage>|VFile|VFileMessage} [value]
+ * @param {VFile | VFileMessage | Array<VFile | VFileMessage> | null | undefined} [value]
  * @returns {Statistics}
  */
 export function statistics(value) {
-  /** @type {Fields} */
+  /** @type {Record<Field, number>} */
   const result = {true: 0, false: 0, null: 0}
 
   if (value) {
@@ -46,8 +48,12 @@ export function statistics(value) {
   }
 
   /**
-   * @param {Array<VFile|VFileMessage>} value
+   * Count a list.
+   *
+   * @param {Array<VFile | VFileMessage>} value
+   *   List.
    * @returns {void}
+   *   Nothing.
    */
   function list(value) {
     let index = -1
@@ -58,8 +64,12 @@ export function statistics(value) {
   }
 
   /**
-   * @param {VFile|VFileMessage} value
+   * Count a value.
+   *
+   * @param {VFile | VFileMessage} value
+   *   Value.
    * @returns {void}
+   *   Nothing.
    */
   function one(value) {
     if ('messages' in value) return list(value.messages)
