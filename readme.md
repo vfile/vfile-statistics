@@ -18,6 +18,7 @@
 *   [Use](#use)
 *   [API](#api)
     *   [`statistics(file)`](#statisticsfile)
+    *   [`Statistics`](#statistics)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Contribute](#contribute)
@@ -35,7 +36,7 @@ block.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install vfile-statistics
@@ -83,34 +84,45 @@ Yields:
 
 ## API
 
-This package exports the identifier `statistics`.
+This package exports the identifier [`statistics`][api-statistics].
 There is no default export.
 
 ### `statistics(file)`
 
-Pass a [vfile][], list of vfiles, or a list of messages (`file.messages`), get
-counts per category.
+Get stats for a file, list of files, or list of messages.
+
+###### Parameters
+
+*   `file` ([`VFile`][vfile], [`VFileMessage`][vfile-message],
+    `Array<VFile | VFileMessage>`, optional)
+    — file, message, or list of files or messages.
 
 ###### Returns
 
-An object with the following fields set to numbers:
+Statistics ([`Statistics`][api-statistics-map]).
+
+### `Statistics`
+
+Statistics (TypeScript type).
+
+###### Fields
 
 *   `fatal` — fatal errors (`fatal: true`)
 *   `warn` — warning messages (`fatal: false`)
-*   `info` — informational messages (`fatal: null` or `fatal: undefined`)
+*   `info` — informational messages (`fatal: null | undefined`)
 *   `nonfatal` — warning or info messages
 *   `total` — all messages
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-It exports the additional type `Statistics`.
+It exports the additional type [`Statistics`][api-statistics-map].
 
 ## Compatibility
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Contribute
@@ -176,3 +188,9 @@ abide by its terms.
 [author]: https://wooorm.com
 
 [vfile]: https://github.com/vfile/vfile
+
+[vfile-message]: https://github.com/vfile/vfile-message
+
+[api-statistics]: #statisticsfile
+
+[api-statistics-map]: #statistics
