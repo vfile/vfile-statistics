@@ -94,7 +94,7 @@ Get stats for a file, list of files, or list of messages.
 ###### Parameters
 
 *   `file` ([`VFile`][vfile], [`VFileMessage`][vfile-message],
-    `Array<VFile | VFileMessage>`, optional)
+    `Array<VFile | VFileMessage>`)
     — file, message, or list of files or messages.
 
 ###### Returns

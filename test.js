@@ -13,13 +13,10 @@ test('statistics', async function () {
   const file = new VFile()
   const other = new VFile()
 
-  assert.deepEqual(statistics(), {
-    fatal: 0,
-    nonfatal: 0,
-    warn: 0,
-    info: 0,
-    total: 0
-  })
+  assert.throws(function () {
+    // @ts-expect-error: check that a runtime error is thrown.
+    statistics()
+  }, /Expected file or message for `value`, not `undefined`/)
 
   assert.deepEqual(statistics(file), {
     fatal: 0,
