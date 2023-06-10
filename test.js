@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {VFile} from 'vfile'
-import {statistics} from './index.js'
+import {statistics} from 'vfile-statistics'
 
 test('statistics', async function () {
   assert.deepEqual(
-    Object.keys(await import('./index.js')).sort(),
+    Object.keys(await import('vfile-statistics')).sort(),
     ['statistics'],
     'should expose the public api'
   )
