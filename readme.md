@@ -45,14 +45,14 @@ npm install vfile-statistics
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {statistics} from 'https://esm.sh/vfile-statistics@2'
+import {statistics} from 'https://esm.sh/vfile-statistics@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {statistics} from 'https://esm.sh/vfile-statistics@2?bundle'
+  import {statistics} from 'https://esm.sh/vfile-statistics@3?bundle'
 </script>
 ```
 
