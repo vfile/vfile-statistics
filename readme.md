@@ -109,7 +109,7 @@ Statistics (TypeScript type).
 
 *   `fatal` — fatal errors (`fatal: true`)
 *   `warn` — warning messages (`fatal: false`)
-*   `info` — informational messages (`fatal: null | undefined`)
+*   `info` — informational messages (`fatal: undefined`)
 *   `nonfatal` — warning or info messages
 *   `total` — all messages
 
