@@ -1,6 +1,4 @@
 {
-  "include": ["**/*.js"],
-  "exclude": ["coverage/", "node_modules/"],
   "compilerOptions": {
     "checkJs": true,
     "customConditions": ["development"],
@@ -11,5 +9,7 @@
     "module": "node16",
     "strict": true,
     "target": "es2022"
-  }
+  },
+  "exclude": ["coverage/", "node_modules/"],
+  "include": ["**/*.js"]
 }
